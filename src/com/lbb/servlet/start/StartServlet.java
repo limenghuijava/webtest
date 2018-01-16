@@ -19,15 +19,15 @@ public class StartServlet extends HttpServlet{
     private static final long serialVersionUID = -4724888703643052018L;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String join = "";
+        StringBuilder sb = new StringBuilder(32);
         while (req.getHeaderNames().hasMoreElements()){
-            join += req.getHeaderNames().nextElement();
+            sb.append(req.getHeaderNames().nextElement());
         }
         String p1 = req.getParameter("lbb");
         PrintWriter pw = new PrintWriter(resp.getOutputStream());
         pw.append(p1);
         pw.append("--");
-        pw.append(join);
+        pw.append(sb.toString());
         pw.println();
         pw.close();
     }
