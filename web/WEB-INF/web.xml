@@ -14,6 +14,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>start</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/start</url-pattern>
     </servlet-mapping>
 </web-app>
